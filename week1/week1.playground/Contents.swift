@@ -25,7 +25,7 @@
         - Ex 8. 使用`git branch -vv --all`查詢包含遠端的所有 branch。在 Github 中創建的 repository，是 main branch。從本機 push 上去的 commit 屬於 master branch。第三個 branch 則是本機的 origin/master。
     * h. git merge
         將兩個 branch 合併在一起， merge 將一個 branch 的修改加入到另一個 branch(通常是 master branch）。
-        - Ex 9. 在 playgound 中撰寫作業的同時，對 git 來說就發生了 untracked 的變化。將目前的變化 staged 後並 commit。
+        - Ex 9. 建立 main branch 並切換到 master， 在 playgound 中撰寫作業的同時，對 git 來說就產生了 unstaged 的變化。將目前的變化 staged 後並 commit。看到目前在 master 之上，也就是 master 比 main 的資料新。
     * i. git push [ repo_name ][branch_name]
          將 local repository 上傳到雲端，稱為 push。
     - Ex 7. 使用`git push --set-upstream origin master`將本機的 local branch 追蹤 remote 的 master branch。成功後在 github 上看到 master branch 中有剛剛的 commit。
