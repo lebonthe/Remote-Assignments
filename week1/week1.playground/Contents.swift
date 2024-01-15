@@ -28,7 +28,7 @@
         - Ex 9. 建立 main branch 並切換到 master， 在 playgound 中撰寫作業的同時，對 git 來說就產生了 unstaged 的變化。將目前的變化 staged 後並 commit。看到目前在 master 之上，也就是 master 比 main 的資料新，因此使用`git merge main`將 main 合併到 master 中。不過在 terminal 中無法解決兩邊 playground 檔案的差異導致無法自動 merge。用`git merge --abort`放棄 merge。此舉例使用 text 或 md 檔案比較適合。*/
 /*:    * i. git push [ repo_name ][branch_name]
          將 local repository 上傳到雲端，稱為 push。
-    - Ex 7. 使用`git push --set-upstream origin master`將本機的 local branch 追蹤 remote 的 master branch。成功後在 github 上看到 master branch 中有剛剛的 commit。*/
+    - Ex 7. 使用`git push origin master`將本機的 local branch 推送到 remote 的 master branch。成功後在 github 上看到 master branch 中有剛剛的 commit。*/
 /*:    * j. git remote
         存在雲端的 repositry 稱為 remote。
     - Ex 6. 到 GitHub 網站，點選 New repository，創建同名 repository。複製 HTTPS 的 URL，使用`git remote add origin 網址`建立 remote，並使用`git remote -v`檢查確定 remote 成立。*/
@@ -39,7 +39,7 @@
     * m. (Advanced) git cherry-pick
     * n. (Advanced) git reflog
     * o. (Advanced) git tag*/
-/*:  3. 將第二大題的舉例按照順序將 Ex.1 到Ex 7.串連起來是從本機建立一個 repo 後再建立 GitHub repo 並 push 本機 repo 上去的案例。以下將方向調換，從 Github 開始建立 repo，再上傳。
+/*:  3. 將第二大題的舉例按照順序將 Ex.1 到Ex 7.串連起來，是從本機建立一個 repo 後，再建立 GitHub repo 並 push 本機 repo 上去的案例。以下將方向調換，從 Github 開始建立 repo，再上傳。
     先在 GitHub 點選 New repository，創建 test repo。複製 HTTPS URL。回到 terminal，在桌面 `git clone URL`， `cd test`進入剛剛 clone 下來的 test repo，透過 `ls -la`看到 repo 中不只有剛剛創建的 README.md 與 LICENSE，還有.git。此時透過`git status`看到目前位於 branch main 上。透過 vim 新增一個文字檔案 test.text 之後，使用`git add .`與 `git commit -m"first"`產生新的 commit。`git push origin main`將 main repo 推送到 GitHub 中。此時 GitHub 同步更新了 test.text 檔案。（https://github.com/lebonthe/test)
  
  */
