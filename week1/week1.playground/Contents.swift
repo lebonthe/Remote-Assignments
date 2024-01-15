@@ -1,25 +1,41 @@
 /*: # Part 1: Git & Github
  1. 已完成
- 2. 舉例跟著編號可重現 Part 1 的建立步驟
+ 2. 舉例跟著編號可重現 Part 1 的交作業步驟
     * a. git status
         顯示目前 Git repository 的狀態，包含目前在哪一個 branch 上、有無檔案可以 commit、有無 untracked 的檔案。
         - Ex 1. 使用 `mkdir Remote-Assignments` 於桌面建立交作業的 repository，使用 `git init` 建立一個 .git repository 在內，此時使用 `git status`，會看到目前位於 branch master，還沒有任何 commit，也沒有東西可以 commit。
     * b. git diff
-        顯示 commits 之間的變化。
-    * c. git add ep. 5
+        顯示檔案之間的變化，包含 commits 之間的變更與自前次 commit 以來 working tree 中的修改。
+        - Ex 5. 使用 `git diff`看到從剛剛 commit 到現在我所有在 week1.playground 中新增的文字。
+    * c. git add
         將 file 放到暫存區的動作，在暫存區、已經 staged 的檔案可以被 commit。
-        - Ex 2. 將本週作業的影片進度截圖與 week1.playground 放到 week1 資料夾中，此時輸入 `add .`將裡面的檔案都 staged。再輸入`git status`看到暫存區裡多了許多綠色的檔名。此時想起還有一張圖片沒有放進來，因此使用 `add `
+        - Ex 2. 將本週作業的影片進度截圖與 week1.playground 放到 week1 資料夾中，此時輸入 `add .`將所有變更都 staged。再輸入`git status`看到暫存區裡多了許多綠色的檔名。此時想起還有一張圖片沒有放進來，放入 week1 後使用 `git add week1/星號 `將 week1 裡面的檔案都 staged。
     * d. git reset ep.6
-    * e. git commit ep.3
-    * f. git log ep.2
-    * g. git branch ep. 9
-    * h. git merge ep. 10
-    * i. git push [ repo_name ][branch_name] ep.4
-    * j. git remote ep.11
+        將已經 staged 的檔案取消 staged，從暫存區放回 working tree。
+        - Ex. 使用`git reset HEAD`將檔案變為 Unstaged。
+    * e. git commit
+         commit 記錄當下 repository 的樣貌，以及跟前次版本的差異。
+        - Ex 3. 將 staged 的檔案們使用 `git commit -m "交作業"。
+    * f. git log
+         查看 commits 的詳細資料。
+        - Ex 4. 使用`git log`可以看到剛剛 commit 的 hash 值、作者、時間與 title。
+ 
+    * g. git branch
+        branch 從某個 commit 中分出來，在這個 branch 中進行的修改都不會影響到主要的 branch。
+        - Ex 8. 使用`git branch -vv --all`查詢包含遠端的所有 branch。在 Github 中創建的 repository，是 main branch。從本機 push 上去的 commit 屬於 master branch。第三個 branch 則是本機的 origin/master。
+    * h. git merge
+        將兩個 branch 合併在一起， merge 將一個 branch 的修改加入到另一個 branch(通常是 master branch）。
+        - Ex 9. 在 GitHub 中按 New pull request
+    * i. git push [ repo_name ][branch_name]
+         將 local repository 上傳到雲端，稱為 push。
+    - Ex 7. 使用`git push --set-upstream origin master`將本機的 local branch 追蹤 remote 的 master branch。成功後在 github 上看到 master branch 中有剛剛的 commit。
+    * j. git remote
+        存在雲端的 repositry 稱為 remote。
+    - Ex 6. 到 GitHub 網站，點選 New repository，創建同名 repository。複製 HTTPS 的 URL，使用`git remote add origin 網址`建立 remote，並使用`git remote -v`檢查確定 remote 成立。
     * k. fork
         當想要取得別人在 Github 中的 repository 以更改，但自己沒有權限時，透過 fork 複製該專案到自己的 GitHub 帳號下，讓自己能夠 clone 下來並變更它。
         - Ex. 想要在 Official Kodeco Swift Style Guide 裡更改內容，到他們的網址 https://github.com/kodecocodes/swift-style-guide 點選 fork，選擇 Create a new fork 到自己的帳號下。接著複製 HTTPS：https://github.com/lebonthe/swift-style-guide.git ，開啟 terminal，輸入 `git clone HTTPS`，這個 repository 就下載到本機中。
-。    * l. (Advanced) git rebase
+    * l. (Advanced) git rebase
     * m. (Advanced) git cherry-pick
     * n. (Advanced) git reflog
     * o. (Advanced) git tag
@@ -215,4 +231,4 @@
 //}
 //let sentence = greet(person: "Luke")
 //print(sentence)
-//: # 謝謝收看！
+//: ## 謝謝收看！
