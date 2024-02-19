@@ -36,9 +36,17 @@
         當想要取得別人在 Github 中的 repository 以更改，但自己沒有權限時，透過 fork 複製該專案到自己的 GitHub 帳號下，讓自己能夠 clone 下來並變更它。
         - Ex. 想要在 Official Kodeco Swift Style Guide 裡更改內容，到他們的網址 https://github.com/kodecocodes/swift-style-guide 點選 fork，選擇 Create a new fork 到自己的帳號下。接著複製 HTTPS：https://github.com/lebonthe/swift-style-guide.git ，開啟 terminal，輸入 `git clone HTTPS`，這個 repository 就下載到本機中。*/
 /*:    * l. (Advanced) git rebase
-    * m. (Advanced) git cherry-pick
-    * n. (Advanced) git reflog
-    * o. (Advanced) git tag*/
+        git rebase <destination> 將 branch 上的 commits 逐一放到 destination branch 上，產生新的 SHA-1 hash，並將 HEAD 移到最新的 commit 上，看起來像是 destination branch 上產生了這些新的 commits。原先 branch 上的 commits 會被隱藏，可使用 git reflog 查詢到。
+ */
+/*:       * m. (Advanced) git cherry-pick
+        git cherry-pick [Commit1] [Commit2] 將別的 branch 上的指定 commits(在這裡是 Commit1 跟 Commit2)複製到目前 HEAD 之下，產生新的 SHA-1 hash。原先的 branch 保持不變。
+ */
+/*:      * n. (Advanced) git reflog
+        查看 local repository 中 HEAD 的歷史記錄，包含所有的 commits 與其 SHA-1 hash，每次 checkout 當 HEAD 切換 branch 的記錄。
+ */
+/*:      * o. (Advanced) git tag
+        git tag [tag名稱] [commit] 在指定的 commit 上創建一個標籤名稱，方便之後隨時 checkout 回標籤處的 commit，也就是讓 HEAD 指向 tag。
+ */
 /*:  3. 將第二大題的舉例按照順序將 Ex.1 到Ex 7.串連起來，是從本機建立一個 repo 後，再建立 GitHub repo 並 push 本機 repo 上去的案例。以下將方向調換，從 Github 開始建立 repo，再上傳。
     先在 GitHub 點選 New repository，創建 test repo。複製 HTTPS URL。回到 terminal，在桌面 `git clone URL`， `cd test`進入剛剛 clone 下來的 test repo，透過 `ls -la`看到 repo 中不只有剛剛創建的 README.md 與 LICENSE，還有.git。此時透過`git status`看到目前位於 branch main 上。透過 vim 新增一個文字檔案 test.text 之後，使用`git add .`與 `git commit -m"first"`產生新的 commit。`git push origin main`將 main repo 推送到 GitHub 中。此時 GitHub 同步更新了 test.text 檔案。（https://github.com/lebonthe/test)
  
